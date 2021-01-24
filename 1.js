@@ -17,15 +17,21 @@
 
 // 微博回复
 
-// function start() {
-//     i = setInterval(() => {
-//         var a = document.getElementsByClassName('W_input');
-//         a[2].value = a[2].value + '输入内容'
-//         document.getElementsByClassName('W_btn_a')[0].click();   
-//         console.log(i);
-//     }, 2000)
-// }
+var arr = ['','']
 
-// function stop() {
-//     clearInterval(i)
-// }
+function start() {
+    i = setInterval(() => {
+        var a = document.getElementsByClassName('W_input');
+        var c = Math.floor(Math.random()*1000) % arr.length;
+        a[2].value = a[2].value + arr[c];
+        console.log(arr[c]);
+        document.getElementsByClassName('W_btn_a')[0].click();   
+        console.log(i);
+    }, 1000)
+}
+
+function stop() {
+    clearInterval(i)
+}
+
+start()
